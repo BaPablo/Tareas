@@ -22,7 +22,6 @@ public class Calculadorav01{
         public double getNum2(){
             return numero2;
         }
-        
         public double suma (){
            return numero1 + numero2;
         }
