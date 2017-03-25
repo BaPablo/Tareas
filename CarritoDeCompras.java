@@ -1,33 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package calculadorav01;
+import java.util.Scanner;
 
-/**
- *
- * @author Pablo
- */
-public class CarritoDeCompras {
-    int precio [] = new int [5];
-    int cantidad [] = new int [5];
-    
-public DarPrecios(){   
-    precio[0] = 1000;
-    precio[1] = 1500;
-    precio[2] = 2000;
-    precio[3] = 2500;
-    precio[4] = 3000;
-}
 
-public DarCantidad(){
-cantidad[0] = 4;
-cantidad[1] = 1;
-cantidad [2] = 2;
-cantidad [3]= 5;
+public class CarritoDeCompras{
+    public void asignación(){
+        int[] precio = new int [5];
+        int[] cantidad = new int [5];
+        precio[0] = 1000;
+        precio[1] = 1500;
+        precio[2] = 2000;
+        precio[3] = 2500;
+        precio[4] = 3000;
+        Scanner teclado = new Scanner(System.in);
         
-
-    
-    
-       
-}
+        for(int i = 0; i<=4; i++){
+            System.out.println("Cuanto desea del producto:" + (i+1));
+            cantidad[i] = teclado.nextInt();
+           }
+    }
+    //public int totalCompras (){
+        
+        
+    }
+ 
+     
