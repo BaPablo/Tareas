@@ -6,20 +6,7 @@
 package CalculadoraV3;
 import java.util.Scanner;
 
-/** - Se requiere desarrollar una clase llamada MaquinaPGA que permite 
- * calcular el Promedio General Acumulado (PGA) para los promedios de las 
- * asignaturas de un alumno para un semestre dado.
- * - Dicha clase debe almacenar los promedios de las asignaturas en un arreglo.
- * - Luego, para hacer los cálculos debe usar la clase Calculadora. - El PGA se
- * calcula como sigue: i. cada nota tiene un "peso" en función del % de horas
- * totales semana para el semestre cursado. ii. lo anterior significa que debe
- * almacenar también las horas-semana que cada curso consideraba, en otro
- * arreglo. Ej. un alumno cursó 5 asignaturas (A) cuyos promedios (P) fueron:
- * P-A1:5.0, P-A2:4.3, P-A3:3,5, P-A4:5.5, P-A5: 4,8 Cada Ai, tenía la siguiente
- * cantidad de horas-semana (H): H-A1: 4, H-A2: 4, H-A3: 8, H-A4: 4, H-A5: 4
- * Total hrs-semana (THS): 24 --> el peso (Pe) de A1 es Pe-A1: H-A1/THS -->
- * 16,6% (4/24), etc...etc... Luego el PGA = Pe_A1 * P_A1 + Pe_A2 * P_A2 +....+
- * .... = ∑ n i=1 (Pe_Ai * P_Ai) 
+/*
  * @author Pablo
  */
 public class MaquinaPGA {
