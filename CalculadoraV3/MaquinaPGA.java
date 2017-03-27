@@ -33,6 +33,7 @@ public class MaquinaPGA {
         sumaHoras();   
         pesoAsignaturas();
         pga();
+        System.out.println("Su PGA es:"+ PGA );
                
     }    
     public void sumaHoras(){
