@@ -6,15 +6,16 @@ public class CarritoDeCompras{
     Calculadora calc = new Calculadora();
     int[] precio = new int [5];
     int[] cantidad = new int [5];
-    
+    Scanner teclado = new Scanner(System.in);
+    int vuelto = 0;
     public void asignación(){
         precio[0] = 1000;
         precio[1] = 1500;
         precio[2] = 2000;
         precio[3] = 2500;
         precio[4] = 3000;
-        Scanner teclado = new Scanner(System.in);
-        int editar, opcion,  producto, seguir;
+        
+        int editar, opcion, producto, seguir;
               
         for(int i = 0; i<=4; i++){
             System.out.println("Cuanto desea del producto:" + i);
@@ -23,7 +24,7 @@ public class CarritoDeCompras{
         System.out.println("¿Desea editar su compra?");
         System.out.println("1: Si     2: No");
         editar = teclado.nextInt();         
-        while(editar == 1){
+        while(editar==1){
             System.out.println("¿Qué quiere hacer?:");
             System.out.println("1: Agregar  2: Quitar   3:Terminar ");
             opcion = teclado.nextInt();
@@ -114,12 +115,12 @@ public class CarritoDeCompras{
                                     seguir = teclado.nextInt();
                                     if(seguir==1){
                                         opcion=3;
-                                        break;
+                                      
                                     }
                                     else{
                                         opcion=4;
-                                        break;
                                     }
+                                    break;
                             case 1: System.out.println("¿Cuanto desea quitar?");
                                     cantidad[1]= cantidad [1]- teclado.nextInt();
                                     if (cantidad[1]<=0)
@@ -129,13 +130,13 @@ public class CarritoDeCompras{
                                     seguir = teclado.nextInt();
                                     if(seguir==1){
                                         opcion=3;
-                                        break;
+                                        
                                     }
                                     else{
                                         opcion=4;
-                                        break;
+                                        
                                     }
-                                
+                                    break;
                             case 2: System.out.println("¿Cuanto desea quitar?");
                                     cantidad[2]= cantidad [2]- teclado.nextInt();
                                     if (cantidad[2]<=0)
@@ -145,13 +146,13 @@ public class CarritoDeCompras{
                                     seguir = teclado.nextInt();
                                     if(seguir==1){
                                         opcion=3;
-                                        break;
+                                        
                                     }
                                     else{
                                         opcion=4;
-                                        break;
+                                       
                                     }
-                                
+                                    break;
                             case 3: System.out.println("¿Cuanto desea quitar?");
                                     cantidad[3]= cantidad [3]- teclado.nextInt();
                                     if (cantidad[3]<=0)
@@ -161,12 +162,13 @@ public class CarritoDeCompras{
                                     seguir = teclado.nextInt();
                                     if(seguir==1){
                                         opcion=3;
-                                        break;
+                                       
                                     }
                                     else{
                                         opcion=4;
-                                        break;
+                                       
                                     }
+                                    break;
                                 
                             case 4: System.out.println("¿Cuanto desea quitar?");
                                     cantidad[4]= cantidad [4]- teclado.nextInt();
@@ -177,28 +179,28 @@ public class CarritoDeCompras{
                                     seguir = teclado.nextInt();
                                     if(seguir==1){
                                         opcion=3;
-                                        break;
                                     }
                                     else{
                                         opcion=4;
-                                        break;
                                     }
+                                    break;
                         }
                         break;    
-                    case 3: editar = 1;
+                    case 3: editar = 0;
                             break;    
-                    case 4: editar = 0;
+                    case 4: editar = 1;
                             break;    
                 }
                         
                     }
                 
-        System.out.println("El resultado de su compra es:" + totalDeCompras());
+        System.out.println("El resultado de su compra es:" + totalDeCompras()+ "y su vuelto es de:"+vuelto);
     }
 
     public int totalDeCompras(){
         int totalparcial = 0;
         int totalfinal = 0;
+        int pago=0;
         calc.setNum1(precio[0]);
         calc.setNum2(cantidad[0]);
         totalfinal = (int)calc.multiplicar();
@@ -209,7 +211,12 @@ public class CarritoDeCompras{
                 calc.setNum1(totalparcial);
                 calc.setNum2(totalfinal);
                 totalfinal= (int)calc.suma();
-            } 
+            }
+        System.out.println("¿Con cuanto pagará?");
+        pago= teclado.nextInt();
+        calc.setNum1(pago);
+        calc.setNum2(totalfinal);
+        vuelto = (int) calc.resta();
         return totalfinal; 
         }
     
